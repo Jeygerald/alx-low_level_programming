@@ -1,39 +1,13 @@
 #include <stdio.h>
-
 /**
- *  * main - prints all possible different combinations of two digit
-*   * Return: Always 0 (Success)
-*/
-
+ * * main - entry point
+ * * Return: alway returns 0
+ */
 int main(void)
 {
-int ones = '0';
-int tens = '0';
-int hundreds = '0';
+int a;
+int b;
+int c;
 
-for (hundreds = '0'; hundreds <= '9'; hundreds++)
-{
-for (tens = '0'; tens <= '9'; tens++)/* prints tens digit*/
-{
-for (ones = '0'; ones <= '9'; ones++)/* prints ones digit*/
-{
-if (!((ones == tens) || (hundreds == tens) ||
-(tens > ones) || (hundreds > tens)))/*eliminates repeatition*/
-{
-putchar(hundreds);
-putchar(tens);
-putchar(ones);
-if (!(ones == '9' && hundreds == '7' &&
-tens == '8'))/*addes comma and space*/
-{
+for (a = 0; a <= 9 ; a++)
 
-								  putchar(',');
-putchar(' ')
-}
-}
-}
-}
-}
-putchar('\n');
-return (0);
-}
