@@ -1,14 +1,17 @@
 #include <stdio.h>
 /**
- * main - entry point
- * Return: alway returns 0
- */
+ * main - Prints numbers from 0 to 9.
+ 
+ * Return: Always 0 (Success)
+*/
 int main(void)
 {
-		int a = 0;
+int i;
 
-			for (; a < 10 ; a++)
-						printf("%d", a);
-				putchar('\n');
-					return (0);
+for (i = 0; i < 10; i++)
+{
+printf("%d", i);
+}
+putchar('\n');
+return (0);
 }
