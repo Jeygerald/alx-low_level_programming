@@ -15,7 +15,7 @@ while (divisor < num)
 if (num % divisor == 0)
 {
 num /= divisor;
-divisor = 2
+divisor = 2;
 }
 else
 divisor++;
