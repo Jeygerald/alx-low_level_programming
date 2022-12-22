@@ -5,25 +5,24 @@
  *  * @s: input string.
  *  * Return: the pointer to dest.
 */
-
 char *rot13(char *s)
 {
 int count = 0, i;
-char alphabet[] =
+char a[] =
 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+char b[] =
+"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-while (*(s + count) != '\0')
+for (i = 0; *(s + i); i++)
 {
-for (i = 0; i < 52; i++)
+for (j = 0; j < 52; j++)
 {
-if (*(s + count) == alphabet[i])
+if (a[j] == *(s + i))
 {
-*(s + count) = rot13[i];
+*(s + i) = b[j];
 break;
 }
 }
-count++;
-
+}
 return (s);
 }
