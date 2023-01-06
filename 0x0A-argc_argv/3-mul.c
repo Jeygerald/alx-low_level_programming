@@ -24,5 +24,6 @@ res *= atoi(argv[i]);
 }
 printf("%d\n", res);
 }
+
 return (0);
 }
