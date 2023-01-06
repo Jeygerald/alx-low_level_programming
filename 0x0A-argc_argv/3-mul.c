@@ -1,26 +1,32 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
- *  * main - Prints the multiplication of two args numbers
- *  * @argc: argument count
- *  * @argv: argument vector
+ *  * main - adds numbers
+ *  * @argc: number of arguments passed to the function
+ *  * @argv: argument vector of pointers to strings
  *  *
+ *  * Return: 0 if no errors, else 1
 */
 int main(int argc, char *argv[])
 {
-int n1 = 0, n2 = 0;
-if (argc == 3)
+int a = 0, i, j;
+for (i = 1; i < argc; i++)
 {
-n1 = atoi(argv[1]);
-n2 = atoi(argv[2]);
-printf("%d\n", n1 * n2);
-}
-else
+for (j = 0; argv[i][j]; j++)
 {
-printf("Error\n");
+if (isdigit(argv[i][j]) == 0)
+{
+puts("Error");
 return (1);
 }
-return (0);
+}
+}
+for (i = 1; i < argc; i++)
+{
+a += atoi(argv[i]);
+}
+printf("%d\n", a);
+return (0);<F11>
 }
