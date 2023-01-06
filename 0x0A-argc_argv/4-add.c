@@ -1,36 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include "main.h"
 
-/**
- *  * main - Program that takes interger arguments and return the sum
- *  * @argc: Number of command line arguments
- *  * @argv: Array name
- *  *Return: 1 if ERROR the number passed is not an interger, 0 if otherwise
-*/
+ /** 
+  *    * main - Prints the sum of args positive numbers
+  *    * @argc: argument count
+  *    * @argv: argument vector
+  *    *
+  *    * Return: Always zero
+ */
 int main(int argc, char *argv[])
 {
-int a, b;
-int c = 0;
-if (argc < 2)
+int i;
+unsigned int k, sum = 0;
+char *e;
+
+if (argc > 1)
 {
-printf("0\n");
-return (0);
-}
-for (a = 1; a < argc; a++)
+for (i = 1; i < argc; i++)
 {
-for (b = 0; argv[a][b] != '\0'; b++)
+e = argv[i];
+
+for (k = 0; k < strlen(e); k++)
 {
-if (argv[a][b] < '0' || argv[a][b] > '9')
+if (e[k] < 48 || e[k] > 57)
 {
-printf("Error\n")
+printf("Error\n");
 return (1);
 }
 }
-c += atoi(argv[a]);
+
+
+sum += atoi(e);
+e++;
 }
-printf("%d\n", c);
+
+printf("%d\n", sum);
+}
+else
+{
+printf("0\n");
+}
 return (0);
 }
