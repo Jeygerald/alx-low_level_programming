@@ -1,13 +1,6 @@
-#include <stdio.h>
+#ifndef FUNCTION_LIKE_MACRO_H
+#define FUNCTION_LIKE_MACRO_H
 
-/**
- *  * main - prints the name of the file it was compiled from
- *  * Return: Always  0 
-*/
+#define ABS(x) (((x) >= 0) ? (x) : -(x))
 
-int main(void)
-{
-printf("%s\n", __BASE_FILE__);
-
-return (0);
-}
+#endif
